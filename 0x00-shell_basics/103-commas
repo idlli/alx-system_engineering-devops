@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1Ap | sed -e ':a' -e 'N' -e '$!ba' -e 's/\n/, /g' | sed -e 's/,$/\n/'
+ls -ap | grep -v "^.$" | grep -v "^..$" | sed -e 's/$/,/' -e '/\/$/s/$/\//' | LC_ALL=C sort
