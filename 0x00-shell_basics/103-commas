@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -p1a | sed -e 's/\([^\/]\)$/&,/' -e 's/\//& /' | LC_COLLATE=C sort -df | tr -d '\n' && echo
